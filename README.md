@@ -25,34 +25,15 @@ with a configuration (as in wrangler.jsonc) that looks like this:
 }
 ```
 
+(Use `npm run wdev` and `npm run vdev` to run `wrangler dev` and `vite dev` respectively.)
+
 Here's a table of paths, expected files to be loaded, and what files actually get loaded.
 
-path: /
-expected: index.html
-actual (wrangler): index.html ✅
-actual (vite): index.html ✅
-
-path: /xyz
-expected: xyz.html
-actual (wrangler): xyz.html ✅
-actual (vite): index.html ❌
-
-path: /xyz/asdasd
-expected: index.html
-actual (wrangler): index.html ✅
-actual (vite): index.html ❌
-
-path: /abc/
-expected: abc/index.html
-actual (wrangler): abc/index.html ✅
-actual (vite): index.html ❌
-
-path: /abc/def
-expected: abc/def.html
-actual (wrangler): abc/def.html ✅
-actual (vite): index.html ❌
-
-path: /abc/def/ghi
-expected: abc/index.html
-actual (wrangler): index.html ❌
-actual (vite): index.html ❌
+| Path         | Expected       | Actual (wrangler) | Actual (vite) |
+| ------------ | -------------- | ----------------- | ------------- |
+| /            | index.html     | index.html ✅     | index.html ✅ |
+| /xyz         | xyz.html       | xyz.html ✅       | index.html ❌ |
+| /xyz/asdasd  | index.html     | index.html ✅     | index.html ❌ |
+| /abc/        | abc/index.html | abc/index.html ✅ | index.html ❌ |
+| /abc/def     | abc/def.html   | abc/def.html ✅   | index.html ❌ |
+| /abc/def/ghi | abc/index.html | index.html ❌     | index.html ❌ |
