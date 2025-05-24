@@ -2,6 +2,8 @@ inconsistencies with routing patterns with single page app mode
 
 ---
 
+(For https://github.com/cloudflare/workers-sdk/issues/9362)
+
 This is a an attempt to list some bugs with the way we choose which html file to load when using single page app mode. Assume we have an assets directory that looks like this:
 
 ```
