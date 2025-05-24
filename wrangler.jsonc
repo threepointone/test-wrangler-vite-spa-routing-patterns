@@ -2,9 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "test-spa-sub-path",
   "compatibility_date": "2025-05-24",
-  "compatibility_flags": ["nodejs_compat"],
   "main": "src/index.ts",
   "assets": {
+    "directory": "public",
     "not_found_handling": "single-page-application"
   }
 }
